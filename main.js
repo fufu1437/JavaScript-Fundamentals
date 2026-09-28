@@ -1,9 +1,6 @@
-const n = Number(require('fs').readFileSync(0, 'utf-8').trim())
-let sum = 0
-// Loop and accumulate, then print sum.
-
-for(let i = 1; i <= n; i++) {
-	sum += i
+function square(n) {
+	return n * n
 }
 
-console.log(sum)
+const n = Number(require('fs').readFileSync(0, 'utf-8').trim())
+console.log(square(n))
