@@ -1,13 +1,16 @@
 const readline = require("readline")
 const rl = readline.createInterface({ input: process.stdin })
 
-function total(...nums) {
-	return nums.reduce((ass, v) => ass += v, 0)
-}
-
 rl.on("line", (line) => {
-	const nums = line.trim() === '' ? [] : line.split(' ').map(Number)
-	console.log(total(...nums))
+	const tokens = line.trim() === '' ? [] : line.split(' ')
+
+	const kept = tokens.filter((token) => {
+		const n = Number(token)
+		return Number.isFinite(n) && n > 0
+	})
+
+	console.log(kept.join(' '))
 	rl.close()
 })
+
 rl.on("close", () => process.exit(0))
