@@ -1,5 +1,9 @@
-const nums = require('fs').readFileSync(0, 'utf-8').trim().split(' ').map(Number)
-// Find and print the maximum.
-const num = nums.splice(' ').map(v => Number(v))
+const words = require('fs').readFileSync(0, 'utf-8').trim().split(' ')
+const seen = {}
+// Use object keys to track distinct words.
 
-console.log(Math.max(...num))
+for(const v of words) {
+	seen[v] = 1
+}
+
+console.log(Object.keys(seen).length)
